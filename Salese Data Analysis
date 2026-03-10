@@ -1,0 +1,29 @@
+# Sales Data Analysis
+
+This project analyzes sales data using Python and Pandas.
+
+## Tools Used
+- Python
+- Pandas
+- Matplotlib
+
+## Dataset
+Sample sales dataset.
+
+## Steps
+1. Load dataset
+2. Analyze sales trends
+3. Visualize results
+
+import pandas as pd
+
+data = {
+    "Product": ["Laptop", "Phone", "Tablet", "Laptop", "Phone"],
+    "Sales": [50000, 30000, 20000, 45000, 25000]
+}
+
+df = pd.DataFrame(data)
+
+total_sales = df["Sales"].sum()
+
+print("Total Sales:", total_sales)
