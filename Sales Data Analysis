@@ -1,38 +1,6 @@
-# Sales Data Analysis Project
-
-## Overview
-This project analyzes sales data to identify trends, top-performing products, and total revenue using Python.
-
-## Technologies Used
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Jupyter Notebook
-
-## Dataset
-The dataset contains information about:
-- Product names
-- Sales amount
-- Order details
-
-## Project Steps
-1. Data collection
-2. Data cleaning
-3. Data analysis
-4. Data visualization
-
-## Key Analysis
-- Total sales calculation
-- Top selling products
-- Sales distribution
-- Basic insights from the dataset
-
-## Sample Code
-
-```python
 import pandas as pd
 
+# Sample sales data
 data = {
     "Product": ["Laptop", "Phone", "Tablet", "Laptop", "Phone"],
     "Sales": [50000, 30000, 20000, 45000, 25000]
@@ -40,9 +8,28 @@ data = {
 
 df = pd.DataFrame(data)
 
+# Total sales
 total_sales = df["Sales"].sum()
 print("Total Sales:", total_sales)
+
+# Sales by product
+sales_by_product = df.groupby("Product")["Sales"].sum()
+print("\nSales by Product:")
+print(sales_by_product)
+
+# Best selling product
+best_product = sales_by_product.idxmax()
+print("\nBest Selling Product:", best_product)
 
 
 OUTPUT:
 Total Sales: 170000
+
+Sales by Product:
+Product
+Laptop    95000
+Phone     55000
+Tablet    20000
+Name: Sales, dtype: int64
+
+Best Selling Product: Laptop
